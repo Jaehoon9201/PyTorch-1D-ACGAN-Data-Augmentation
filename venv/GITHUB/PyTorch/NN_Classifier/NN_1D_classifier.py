@@ -8,7 +8,6 @@ import numpy as np
 import torch
 import tensorflow as tf
 import time
-from pytorch_TTCG import TTCG
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 #
@@ -26,7 +25,7 @@ class Train_DiabetesDataset(Dataset):
     """ Diabetes dataset."""
     # Initialize your data, download, etc.
     def __init__(self):
-        xy = np.loadtxt('./data/train_freeze.csv',delimiter=',', dtype=np.float32)
+        xy = np.loadtxt('./data/train_freezed.csv',delimiter=',', dtype=np.float32)
         self.len = xy.shape[0]
 
         self.x_data = from_numpy(xy[:, :-1])
@@ -42,7 +41,7 @@ class Test_DiabetesDataset(Dataset):
     """ Diabetes dataset."""
     # Initialize your data, download, etc.
     def __init__(self):
-        xy = np.loadtxt('./data/test_freeze.csv',delimiter=',', dtype=np.float32)
+        xy = np.loadtxt('./data/test_freezed.csv',delimiter=',', dtype=np.float32)
 
         self.len = xy.shape[0]
         self.x_data = from_numpy(xy[:, :-1])
@@ -97,7 +96,6 @@ model.to(device)
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.002)
-#optimizer = optimizer = TTCG(model.parameters())
 
 
 def train(epoch, train_loss_values):
