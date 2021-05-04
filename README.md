@@ -2,7 +2,7 @@
 
 This code is based on the reference codes linked below.
 
-##### [reference ](https://towardsdatascience.com/understanding-acgans-with-code-pytorch-2de35e05d3e4)
+#### [reference ](https://towardsdatascience.com/understanding-acgans-with-code-pytorch-2de35e05d3e4)
 
 This code is for **1-D array data augmentation** 
 
