@@ -1,3 +1,5 @@
+#reference : https://towardsdatascience.com/understanding-acgans-with-code-pytorch-2de35e05d3e4
+
 import torch
 from torch import nn
 

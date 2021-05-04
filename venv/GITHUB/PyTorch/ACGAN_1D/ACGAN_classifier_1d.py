@@ -1,5 +1,5 @@
 #reference : https://towardsdatascience.com/understanding-acgans-with-code-pytorch-2de35e05d3e4
-#theory reference : https://machinelearningmastery.com/how-to-develop-an-auxiliary-classifier-gan-ac-gan-from-scratch-with-keras/
+
 import torch
 from torch import nn
 import torch.utils.data
