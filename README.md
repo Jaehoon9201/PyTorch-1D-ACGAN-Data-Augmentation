@@ -30,3 +30,9 @@ eval_label = 6*np.ones(batch_size).astype('int64')
 ```
 
 (above code is on line 32 of **ACGAN_classifier_1d.py**)
+
+## Data Augmentation Results with plotting
+
+You can check the results in **image** folder.
+
+![20210504_161953](https://user-images.githubusercontent.com/71545160/116971504-a24ec100-acf4-11eb-8321-cde0ebc28b26.png)
