@@ -30,7 +30,6 @@ eval_noise_label = torch.FloatTensor(batch_size, 7, 1, 1).normal_(0, 1)
 eval_noise_ = np.random.normal(0, 1, (batch_size, 6))
 #eval_label = np.random.randint(0, 7, batch_size)
 eval_label = 6*np.ones(batch_size).astype('int64')
-print(eval_label)
 eval_onehot = np.zeros((batch_size, 7))
 eval_onehot[np.arange(batch_size), eval_label] = 1
 # print(eval_noise_[np.arange(batch_size), :7])
@@ -38,13 +37,8 @@ eval_onehot[np.arange(batch_size), eval_label] = 1
 # eval_noise_[np.arange(batch_size), :7] = eval_onehot[np.arange(batch_size)]
 
 eval_label = np.reshape(eval_label, (100,1))
-print(eval_noise_.shape)
-print(eval_label.shape)
 eval_noise_label_ = np.concatenate((eval_noise_, eval_label), axis= 1)
 eval_noise_label_ = (torch.from_numpy(eval_noise_label_))
-# print('eval_noise_')
-# print(eval_noise_)
-print(eval_noise_label_.shape)
 eval_noise_label.data.copy_(eval_noise_label_.view(batch_size, 7, 1, 1))
 
 eval_noise_label = eval_noise_label.cuda()
@@ -172,8 +166,6 @@ for epoch in range(epochs):
         label = ((torch.from_numpy(label)).long())
         label = label.cuda()  # converting to tensors in order to work with pytorch
         # ■■■■■■ Should be revised ■■■■■■
-        print('noise_label size')
-        print(noise_label.size())
         noise_image = gen(noise_label)
         # ■■■■■■■■■■■■■■■■■■■■■■■■
         # print('noise image size')
@@ -181,8 +173,6 @@ for epoch in range(epochs):
 
         source_, class_ = disc(noise_image.detach())  # we will be using this tensor later on
         source_ = torch.reshape(source_, [-1])
-        print(source_.size())
-        print(fake_label.size())
         source_error = source_obj(source_, fake_label)  # label for real images--1; for fake images--0
         class_error = class_obj(class_, label)
         error_fake = source_error + class_error
