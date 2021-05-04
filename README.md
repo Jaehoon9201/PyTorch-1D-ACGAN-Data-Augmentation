@@ -4,6 +4,13 @@ This code is based on the reference codes linked below.
 
 #### [reference ](https://towardsdatascience.com/understanding-acgans-with-code-pytorch-2de35e05d3e4)
 
+## How to run the code
+
+please excute the **ACGAN_augmentator_and_classifier_1d.py**
+
+
+## About the file
+
 This code is for **1-D array data augmentation** 
 
 The given data in 'data' directory is simple data for training and testing this code.
